@@ -16,7 +16,6 @@ services:
       - "443:443"
       - "8080:8080"
 
-    command: --api.insecure=true
 
 
     volumes:
@@ -31,9 +30,9 @@ services:
 
     labels:
       traefik.enable: 'true'
-      traefik.http.routers.traefik-dashboard-http-router.entrypoints: secure
-      traefik.http.routers.traefik-dashboard-http-router.rule: Host(`traefik.oukcorp.com`)
-      traefik.http.routers.traefik-dashboard-http-router.service: api@internal
+      #traefik.http.routers.traefik-dashboard-http-router.entrypoints: secure
+      #traefik.http.routers.traefik-dashboard-http-router.rule: Host(`traefik.oukcorp.com`)
+      #traefik.http.routers.traefik-dashboard-http-router.service: api@internal
 
 
 networks:
