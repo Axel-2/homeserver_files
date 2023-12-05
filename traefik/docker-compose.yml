@@ -17,7 +17,7 @@ services:
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
       - "./traefik.yml:/etc/traefik/traefik.yml"
-      - "/home/oukerie/data/letsencrypt:/letsencrypt"
+      - "/home/homeserver/data/letsencrypt:/letsencrypt"
 
     env_file:
       - .env
