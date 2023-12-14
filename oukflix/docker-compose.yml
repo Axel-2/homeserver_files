@@ -10,9 +10,9 @@ services:
       - PGID=1000
       - TZ=Europe/London
     volumes:
-      - /home/oukerie/data/bazarr/config:/config
-      - /home/oukerie/oukflix_data/movies:/home/movies #optional
-      - /home/oukerie/oukflix_data/tv:/home/tv #optional
+      - /home/homeserver/data/oukflix/bazarr/config:/config
+      - /home/homeserver/data/movies:/home/movies #optional
+      - /home/homeserver/data/tv:/home/tv #optional
     #ports:
     #  - 6767:6767
     restart: unless-stopped
@@ -32,9 +32,9 @@ services:
       - TZ=Europe/London
       - JELLYFIN_PublishedServerUrl=jl.oukcorp.com #optional
     volumes:
-      - /home/oukerie/data/jellyfin/jellyfinlibrary:/config
-      - /home/oukerie/oukflix_data/tv:/data/tvshows
-      - /home/oukerie/oukflix_data/movies:/data/movies
+      - /home/homeserver/data/oukflix/jellyfin/jellyfinlibrary:/config
+      - /home/homeserver/data/tv:/data/tvshows
+      - /home/homeserver/data/movies:/data/movies
     #ports:
       #- 8096:8096
       #- 8920:8920 #optional
@@ -56,9 +56,9 @@ services:
       - PGID=1000
       - TZ=Europe/London
     volumes:
-      - /home/oukerie/data/radarr/config:/config
-      - /home/oukerie/oukflix_data/movies:/home/movies #optional
-      - /home/oukerie/oukflix_data/downloads:/downloads #optional
+      - /home/homeserver/data/radarr/config:/config
+      - /home/homeserver/data/movies:/home/movies #optional
+      - /home/homeserver/data/downloads:/downloads #optional
     #ports:
     #  - 7878:7878
     restart: unless-stopped
@@ -77,9 +77,9 @@ services:
       - PGID=1000
       - TZ=Europe/London
     volumes:
-      - /home/oukerie/data/sonnar/data:/config
-      - /home/oukerie/oukflix_data/tv:/home/tv #optional
-      - /home/oukerie/oukflix_data/downloads:/downloads #optional
+      - /home/homeserver/data/sonnar/data:/config
+      - /home/homeserver/data/tv:/home/tv #optional
+      - /home/homeserver/data/downloads:/downloads #optional
     #ports:
     #  - 8989:8989
     restart: unless-stopped
@@ -100,8 +100,8 @@ services:
       - TZ=Europe/London
       - WEBUI_PORT=8080
     volumes:
-      - /home/oukerie/data/qbittorrent/config:/config
-      - /home/oukerie/oukflix_data/downloads:/downloads
+      - /home/homeserver/data/oukflix/qbittorrent/config:/config
+      - /home/homeserver/data/downloads:/downloads
     ports:
       #- 8080:8080
       - 6881:6881
@@ -124,7 +124,7 @@ services:
       - PGID=1000
       - TZ=Europe/London
     volumes:
-      - /home/oukerie/data/prowlarr/data:/config
+      - /home/homeserver/data/oukflix/prowlarr/data:/config
     #ports:
     #  - 9696:9696
     restart: unless-stopped
@@ -145,7 +145,7 @@ services:
     #ports:
     #        - 5055:5055
     volumes:
-      - /home/oukerie/data/jellyseer/config:/app/config
+      - /home/homeserver/data/oukflix/jellyseer/config:/app/config
     restart: unless-stopped
     labels:
       - "traefik.enable=true"
