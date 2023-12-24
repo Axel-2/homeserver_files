@@ -16,8 +16,9 @@ services:
     image: ghcr.io/immich-app/immich-server:${IMMICH_VERSION:-release}
     command: [ "start.sh", "immich" ]
     volumes:
-      - ${UPLOAD_LOCATION}:/usr/src/app/upload
+      - ${UPLOAD_LOCATION}:/usr/src/app/upload 
       - /etc/localtime:/etc/localtime:ro
+      - ${EXTERNAL_PATH}:/usr/src/app/external
     env_file:
       - .env
     ports:
@@ -36,6 +37,7 @@ services:
     command: [ "start.sh", "microservices" ]
     volumes:
       - ${UPLOAD_LOCATION}:/usr/src/app/upload
+      - ${EXTERNAL_PATH}:/usr/src/app/external
       - /etc/localtime:/etc/localtime:ro
     env_file:
       - .env
