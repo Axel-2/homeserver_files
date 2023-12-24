@@ -12,7 +12,7 @@ services:
     domainname: ${DOMAIN_NAME}
     ports:
       #- 443:443/tcp
-      - 80:80/tcp
+      - 75:80/tcp
       - 53:53/tcp
       - 53:53/udp
  #Allows use of different port to access pihole web interface when other docker containers use port 80
