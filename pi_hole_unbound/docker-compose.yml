@@ -32,6 +32,8 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.pi.rule=Host(`pi.oukcorp.com`)"
+      - traefik.http.services.prs.loadbalancer.server.port=75
+
     volumes:
       - etc_pihole-unbound:/etc/pihole:rw
       - etc_pihole_dnsmasq-unbound:/etc/dnsmasq.d:rw
