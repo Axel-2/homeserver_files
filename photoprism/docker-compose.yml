@@ -101,7 +101,9 @@ services:
     ## Storage Folders: "~" is a shortcut for your home directory, "." for the current directory
     volumes:
       # "/host/folder:/photoprism/folder"                # Example
-      - "/home/homeserver/data/nextcloud/data/Fencing7589/files/InstantUpload:/photoprism/originals"               # Original media files (DO NOT REMOVE)
+      - "/home/homeserver/data/photos:/photoprism/originals"     
+      - "/home/homeserver/data/nextcloud/data/Fencing7589/files/photo_disk/Panasonic:/photoprism/originals/panasonic"               # Original media files (DO NOT REMOVE)
+          # Original media files (DO NOT REMOVE)
       # - "/example/family:/photoprism/originals/family" # *Additional* media folders can be mounted like this
       # - "~/Import:/photoprism/import"                  # *Optional* base folder from which files can be imported to originals
       - "/home/homeserver/data/photoprism/storage:/photoprism/storage"                  # *Writable* storage folder for cache, database, and sidecar files (DO NOT REMOVE)
