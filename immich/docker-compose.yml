@@ -28,6 +28,14 @@ services:
       - database
     restart: always
 
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.immich.rule=Host(`immich.oukcorp.com`)"
+      - "traefik.http.routers.immich.entrypoints=secure"
+      - "traefik.http.services.immich.loadbalancer.server.port=2283"
+      #- "traefik.http.services.immich.loadbalancer.server.scheme=https"
+    
+
   immich-microservices:
     container_name: immich_microservices
     image: ghcr.io/immich-app/immich-server:${IMMICH_VERSION:-release}
@@ -76,3 +84,8 @@ services:
 volumes:
   pgdata:
   model-cache:
+
+networks:
+  default:
+    external:
+      name: traefik
