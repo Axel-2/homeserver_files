@@ -37,7 +37,7 @@ services:
     container_name: paperless
     image: ghcr.io/paperless-ngx/paperless-ngx:latest
     restart: unless-stopped
-    user: 1000:1000
+    user: "1000:1000"
     depends_on:
       - broker
     #ports:
@@ -56,8 +56,8 @@ services:
     env_file: docker-compose.env
     environment:
       PAPERLESS_REDIS: redis://broker:6379
-      USERMAP_UID: 1000
-      USERMAP_GID: 1000
+      USERMAP_UID: "1000"
+      USERMAP_GID: "1000"
 
     labels:
       - "traefik.enable=true"
