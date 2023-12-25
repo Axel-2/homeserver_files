@@ -122,10 +122,10 @@
         href: https://immich.oukcorp.com
         ping: immich_server:3001
         container: immich_server
-        widget:
-            type: immich
-            url: http://immich_server:3001
-            key: SM3QbIRaOgxpW50cocyx3UUupIM0KKYjYxyLPd5A
+        #widget:
+        #    type: immich
+        #    url: http://immich_server:3001
+        #    key: asH17thpbrpmFQbawdEI9MGEM6uYf4kmYwIrXa8wj8
     #- Pi-Hole:
      #   icon: pi-hole.png
     #    href: https://pi.oukcorp.com/
@@ -141,11 +141,11 @@
         href: https://nextcloud.oukcorp.com/
         ping: http://nextcloud:443
         container: nextcloud
-        widget:
-          type: nextcloud
-          url: http://nextcloud:443
-          username: Fencing7589
-          password: 7ah@jahB2#5*%m7EM#C%F7QXYETXJZ
+        #widget:
+        #  type: nextcloud
+        #  url: http://nextcloud:443
+        #  username: Fencing7589
+        #  password: 7ah@jahB2#5*%m7EM#C%F7QXYETXJZ
     #- Vaultwarden:
      #   icon: vaultwarden.png
       #  href: https://vw.oukcorp.com/
