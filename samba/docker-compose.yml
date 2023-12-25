@@ -1,0 +1,12 @@
+version: '3'
+services:
+  samba:
+    image: dperson/samba
+    container_name: samba
+    ports:
+      - "139:139"
+      - "445:445"
+    volumes:
+      - /home/homeserver/data/samba/data:/mount
+    command: -p
+    restart: always
