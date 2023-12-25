@@ -120,11 +120,11 @@
     - Immich:
         icon: immich.png
         href: https://immich.oukcorp.com
-        ping: immich_server:3001
+        ping: immich_server:2283
         container: immich_server
         widget:
             type: immich
-            url: http://immich_server:3001
+            url: http://immich_server:2283
             key: SM3QbIRaOgxpW50cocyx3UUupIM0KKYjYxyLPd5A
     #- Pi-Hole:
      #   icon: pi-hole.png
