@@ -1,12 +1,27 @@
-version: '3'
+version: '3.4'
+
 services:
   samba:
     image: dperson/samba
-    container_name: samba
+    environment:
+      TZ: 'Europe/Zurich'
+    networks:
+      - default
     ports:
-      - "139:139"
-      - "445:445"
+      - "137:137/udp"
+      - "138:138/udp"
+      - "139:139/tcp"
+      - "445:445/tcp"
+    read_only: true
+    tmpfs:
+      - /tmp
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
     volumes:
-      - /home/homeserver/data/samba/data:/mount
-    command: -p
-    restart: always
+      - /home/homeserver/data/samba/printer:/mnt:z
+    command: '-s "Printer;/mnt" '
+
+networks:
+  default:
+
