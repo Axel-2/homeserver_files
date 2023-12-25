@@ -4,8 +4,6 @@ volumes:
   prometheus-data:
     driver: local
 
-  grafana-data:
-    driver: local
 
 services:
   prometheus:
@@ -17,7 +15,7 @@ services:
     #  - "9095:9090"
     volumes:
       - ./config/:/etc/prometheus
-      - prometheus-data:/prometheus
+      - /home/homeserver/prometheus/:/prometheus
     restart: unless-stopped
     command:
       - "--config.file=/etc/prometheus/prometheus.yml"
@@ -29,7 +27,7 @@ services:
     #ports:
     #  - "3001:3000"
     volumes:
-      - grafana-data:/var/lib/grafana
+      - /home/homeserver/data/grafana:/var/lib/grafana
     restart: unless-stopped
     user: "0"
     #user: 1000:1000
