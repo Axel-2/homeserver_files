@@ -37,6 +37,7 @@ services:
     container_name: paperless
     image: ghcr.io/paperless-ngx/paperless-ngx:latest
     restart: unless-stopped
+    user: 1000
     depends_on:
       - broker
     #ports:
