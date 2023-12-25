@@ -20,7 +20,7 @@ services:
     tty: true
     volumes:
       - /home/homeserver/data/samba/printer:/mnt:z
-    command: '-s "Printer;/mnt" '
+    command: '-s "Printer;/mnt;yes;no;yes;" '
 
 networks:
   default:
